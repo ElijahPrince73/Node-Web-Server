@@ -49,11 +49,19 @@ app.get('/about', (req, res) => {
 	})
 })
 
+app.get('/projects', (req, res) => {
+	res.render('projects.hbs', {
+		pageTitle: 'Projects Page',
+		welcomeMessage: 'Welcome to the projects page'
+	})
+})
+
 app.get('/bad', (req, res) => {
 	res.send({
 		error: "Unable to find that page"
 	})
 })
+
 app.listen(port, () => {
 	console.log(`Server is up on port ${port}`);
 })
